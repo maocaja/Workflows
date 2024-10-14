@@ -1,0 +1,5 @@
+# Ignorar todos los archivos .DS_Store en el repositorio
+.DS_Store
+
+# Ignorar específicamente el archivo .DS_Store en la carpeta .github
+.github/.DS_Store
