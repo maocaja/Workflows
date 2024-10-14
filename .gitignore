@@ -3,3 +3,5 @@
 
 # Ignorar específicamente el archivo .DS_Store en la carpeta .github
 .github/.DS_Store
+
+node_modules/
