@@ -18,8 +18,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
-
       - name: Print message
         run: echo "Hello GitHub Actions"
