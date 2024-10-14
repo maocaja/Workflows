@@ -1,0 +1,38 @@
+name: CI Workflow
+
+# El workflow se activará en cada push o pull request a la rama main
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Definición de los jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Sistema operativo que usará el job
+
+    steps:
+      # Step 1: Checkout del código
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Configurar el entorno con Node.js (puedes cambiarlo a otra tecnología si no es Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Especifica la versión de Node.js (ajusta según tus necesidades)
+
+      # Step 3: Instalar dependencias
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Ejecutar las pruebas
+      - name: Run tests
+        run: npm test
+
+      # Step 5: Mostrar un mensaje de éxito
+      - name: Success message
+        run: echo "Build and tests completed successfully!"
