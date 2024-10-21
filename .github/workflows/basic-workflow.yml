@@ -1,16 +1,16 @@
-name: Basic Workflow
+name: Checkout and list Files
 
 on: [push]
 
 jobs:
-  print-message:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print message in bash
-        shell: bash
-        run: echo "Hello GitHub Actions in bash"
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Print message in sh
-        shell: sh
-        run: echo "Hello GitHub Actions in sh"
+      # Step 2: List files
+      - name: list in repo
+        run: ls -la
